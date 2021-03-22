@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [posts, SetPosts] = useState("here");
-  const [photos, SetPhotos] = useState("photo placeholder");
+  //const [photos, SetPhotos] = useState("photo placeholder");
   useEffect(() => {
     async function fetchdata() {
       const data = await fetch("/posts");
