@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [posts, SetPosts] = useState("here");
+  const [photos, SetPhotos] = useState("photo placeholder");
+  useEffect(() => {
+    async function fetchdata() {
+      const data = await fetch("/posts");
+      const parse = await data.json();
+      SetPosts(JSON.stringify(parse));
+    }
+    fetchdata();
+  }, []);
+  useEffect(() => {
+    async function fetchPhoto() {}
+    fetchPhoto();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header className="App-header">{posts}</header>
+      <div>Photo</div>
+      <img
+        src="https://storage.googleapis.com/download/storage/v1/b/jeffigram/o/DCE9838B-7CBF-4F0B-9E11-40B9889A2588_1_105_c.jpeg?generation=1616390550076602&alt=media"
+        alt="test"
+      ></img>
     </div>
   );
 }
