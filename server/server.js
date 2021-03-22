@@ -3,6 +3,7 @@ const path = require("path");
 
 const express = require("express");
 const app = express();
+const port = process.env.PORT || 8080;
 
 const config = require("../knexfile");
 const knex = require("knex")(config[process.env.DB_ENV]);
@@ -21,6 +22,6 @@ app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "..", "build", "index.html"));
 });
 
-app.listen(5566, () => {
-  console.log("express listening on port 5566");
+app.listen(port, () => {
+  console.log(`express listening on port ${port}`);
 });
