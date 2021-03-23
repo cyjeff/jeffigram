@@ -13,7 +13,7 @@ function Post({ photo }) {
       const parsed = await data.json();
       SetComments(parsed);
     }
-    getdata();
+    if (photo.id) getdata();
   }, [photo.id, submitFlag]);
 
   async function submit() {

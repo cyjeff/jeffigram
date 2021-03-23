@@ -19,9 +19,12 @@ app.get("/posts", async (req, res) => {
 });
 
 app.get("/comments/:id", async (req, res) => {
-  const user = req.params.id;
-  const data = await knex.select().from("comments").where("post_id", user);
-  res.send(data);
+  const user = Number(req.params.id);
+  if (isNaN(user)) res.send("not valid");
+  else {
+    const data = await knex.select().from("comments").where("post_id", user);
+    res.send(data);
+  }
 });
 
 app.post("/comments", async (req, res) => {
