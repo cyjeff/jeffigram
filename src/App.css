@@ -4,6 +4,14 @@
   background-color: aquamarine;
 }
 
-img {
+.headblock {
+  background-color: black;
   width: 100%;
+  height: 60px;
+}
+
+.footblock {
+  background-color: black;
+  width: 100%;
+  height: 70px;
 }

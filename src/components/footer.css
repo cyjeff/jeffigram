@@ -16,6 +16,10 @@
   border-radius: 50%;
 }
 
+.camImg {
+  width: 35px;
+}
+
 .footerBack {
   background-color: black;
   position: fixed;

@@ -6,7 +6,7 @@ function Footer() {
     <div className="footer">
       <div className="footerBack"></div>
       <div className="camIcon">
-        <img alt="cam" src={cam} />
+        <img className="camImg" alt="cam" src={cam} />
       </div>
     </div>
   );
