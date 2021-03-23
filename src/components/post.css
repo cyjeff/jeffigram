@@ -1,23 +1,79 @@
+.container {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: white;
+}
+
 .postHead {
-  height: 50px;
+  height: 60px;
   background-color: black;
   display: flex;
   justify-content: flex-start;
 }
 .avatar {
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
-  margin: 10px;
+  margin: 13px;
   object-fit: cover;
 }
 
 .avatar-text {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  color: white;
-  margin-top: 14px;
+  margin-top: 16px;
+  font-size: larger;
 }
 
 .photo {
   width: 100%;
+}
+
+.comments {
+  display: flex;
+  justify-content: flex-start;
+  font-size: larger;
+  font-weight: 300;
+  margin-top: 10px;
+}
+
+.comUser {
+  font-weight: 600;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.comment-input {
+  width: auto;
+  height: 40px;
+  border: gray 1px solid;
+  border-radius: 20px;
+  margin: 15px 10px 10px 10px;
+  display: flex;
+  align-items: center;
+}
+
+.comment-text {
+  background-color: transparent;
+  border: none;
+  height: 30px;
+  width: 80%;
+  font-size: larger;
+  margin-left: 15px;
+  font-weight: 300;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: white;
+}
+
+::placeholder {
+  color: #a5a5a5;
+  opacity: 1;
+}
+
+.comment-send {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: #9fcfeb;
+  width: 25%;
+  height: 35px;
+  font-size: larger;
+  border: none;
+  background-color: transparent;
+  border-left: gray solid 1px;
 }

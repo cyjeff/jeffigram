@@ -18,6 +18,12 @@ app.get("/posts", async (req, res) => {
   res.send(data);
 });
 
+app.get("/comments/:id", async (req, res) => {
+  const user = req.params.id;
+  const data = await knex.select().from("comments").where("post_id", user);
+  res.send(data);
+});
+
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "..", "build", "index.html"));
 });
