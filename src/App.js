@@ -18,11 +18,9 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <div className="headblock"></div>
       {posts.map((item) => {
         return <Post photo={item} key={item.id} />;
       })}
-      <div className="footblock"></div>
       <Footer />
     </div>
   );

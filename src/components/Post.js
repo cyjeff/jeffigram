@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 function Post({ photo }) {
   const [comments, SetComments] = useState([]);
-  const [newComm, SetNewComm] = useState([]);
+  const [newComm, SetNewComm] = useState("");
   const [submitFlag, SetSubmitFlag] = useState(false);
 
   useEffect(() => {
@@ -17,6 +17,7 @@ function Post({ photo }) {
   }, [photo.id, submitFlag]);
 
   async function submit() {
+    if (newComm === "") return;
     const data = { user: "cyjeff", text: newComm, post_id: photo.id };
     await fetch("/comments", {
       method: "POST",

@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  width: auto;
+  max-width: 1000px;
   background-color: black;
 }
 
