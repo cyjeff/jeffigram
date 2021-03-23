@@ -23,5 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 # connection details
-.yaml
+app.yaml
 .env
