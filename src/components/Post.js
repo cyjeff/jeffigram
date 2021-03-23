@@ -4,6 +4,9 @@ import { useEffect, useState } from "react";
 
 function Post({ photo }) {
   const [comments, SetComments] = useState([]);
+  const [newComm, SetNewComm] = useState([]);
+  const [submitFlag, SetSubmitFlag] = useState(false);
+
   useEffect(() => {
     async function getdata() {
       const data = await fetch(`/comments/${photo.id}`);
@@ -11,7 +14,23 @@ function Post({ photo }) {
       SetComments(parsed);
     }
     getdata();
-  }, [photo.id]);
+  }, [photo.id, submitFlag]);
+
+  async function submit() {
+    const data = { user: "cyjeff", text: newComm, post_id: photo.id };
+    await fetch("/comments", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    SetSubmitFlag(!submitFlag);
+    SetNewComm("");
+  }
+
   return (
     <div className="container">
       <div className="postHead">
@@ -34,8 +53,14 @@ function Post({ photo }) {
           className="comment-text"
           type="text"
           placeholder="Add comments"
+          value={newComm}
+          onChange={(e) => {
+            SetNewComm(e.target.value);
+          }}
         />
-        <button className="comment-send">Send</button>
+        <button className="comment-send" onClick={submit}>
+          Send
+        </button>
       </div>
     </div>
   );

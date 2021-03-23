@@ -24,6 +24,11 @@ app.get("/comments/:id", async (req, res) => {
   res.send(data);
 });
 
+app.post("/comments", async (req, res) => {
+  await knex("comments").insert([req.body]);
+  res.send("comment added");
+});
+
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "..", "build", "index.html"));
 });
