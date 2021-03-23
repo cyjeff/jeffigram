@@ -3,7 +3,7 @@ const path = require("path");
 
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 5566;
 
 const config = require("../knexfile");
 const knex = require("knex")(config[process.env.DB_ENV]);
