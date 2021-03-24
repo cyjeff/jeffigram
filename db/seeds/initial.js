@@ -19,16 +19,5 @@ exports.seed = function (knex) {
             "https://www.googleapis.com/download/storage/v1/b/jeffigram/o/EE774B7D-F353-4914-A29B-295B5712B693_1_105_c.jpeg?generation=1616390588929490&alt=media",
         },
       ]);
-    })
-    .then(function () {
-      return knex("comments")
-        .del()
-        .then(function () {
-          return knex("comments").insert([
-            { user: "cyjeff", text: "great pic!", post_id: 1 },
-            { user: "cyjeff", text: "luv it!", post_id: 1 },
-            { user: "cyjeff", text: "where is it?", post_id: 2 },
-          ]);
-        });
     });
 };

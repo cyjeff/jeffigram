@@ -8,6 +8,15 @@ const port = process.env.PORT || 5566;
 const config = require("../knexfile");
 const knex = require("knex")(config[process.env.DB_ENV]);
 
+// Run migration
+(async () => {
+  await knex.migrate.rollback();
+  await knex.migrate.latest();
+  console.log("database migrated");
+  await knex.seed.run();
+  console.log("database seeded");
+})();
+
 app.use(express.json());
 
 // Serve static assets
