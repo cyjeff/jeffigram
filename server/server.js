@@ -14,8 +14,13 @@ app.use(express.json());
 app.use(express.static(path.resolve(__dirname, "..", "build")));
 
 app.get("/posts", async (req, res) => {
-  const data = await knex.select().from("posts");
+  const data = await knex.select().from("posts").orderBy("id", "desc");
   res.send(data);
+});
+
+app.post("/posts", async (req, res) => {
+  await knex("posts").insert([req.body]);
+  res.send("post added");
 });
 
 app.get("/comments/:id", async (req, res) => {
@@ -32,7 +37,7 @@ app.post("/comments", async (req, res) => {
   res.send("comment added");
 });
 
-app.get("/", (req, res) => {
+app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "..", "build", "index.html"));
 });
 

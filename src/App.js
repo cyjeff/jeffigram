@@ -5,7 +5,9 @@ import Post from "./components/Post";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [posts, SetPosts] = useState([1, 2, 3]);
+  const [posts, SetPosts] = useState([]);
+  const [submitFlag, SetSubmitFlag] = useState(false);
+
   useEffect(() => {
     async function fetchdata() {
       const data = await fetch("/posts");
@@ -13,7 +15,7 @@ function App() {
       SetPosts(parse);
     }
     fetchdata();
-  }, []);
+  }, [submitFlag]);
 
   return (
     <div className="App">
@@ -21,7 +23,7 @@ function App() {
       {posts.map((item) => {
         return <Post photo={item} key={item.id} />;
       })}
-      <Footer />
+      <Footer submitFlag={submitFlag} SetSubmitFlag={SetSubmitFlag} />
     </div>
   );
 }

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 function Post({ photo }) {
   const [comments, SetComments] = useState([]);
   const [newComm, SetNewComm] = useState("");
-  const [submitFlag, SetSubmitFlag] = useState(false);
+  const [submitCommFlag, SetSubmitCommFlag] = useState(false);
 
   useEffect(() => {
     async function getdata() {
@@ -14,7 +14,7 @@ function Post({ photo }) {
       SetComments(parsed);
     }
     if (photo.id) getdata();
-  }, [photo.id, submitFlag]);
+  }, [photo.id, submitCommFlag]);
 
   async function submit() {
     if (newComm === "") return;
@@ -28,7 +28,7 @@ function Post({ photo }) {
       body: JSON.stringify(data),
     });
 
-    SetSubmitFlag(!submitFlag);
+    SetSubmitCommFlag(!submitCommFlag);
     SetNewComm("");
   }
 
