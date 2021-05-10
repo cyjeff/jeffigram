@@ -1,35 +1,39 @@
-## Google Cloud Storage
+# Jeffigram
+<img width="150" alt="apple-touch-icon" src="https://user-images.githubusercontent.com/34878933/117680037-c2e2b380-b1eb-11eb-9371-651d88b0362f.png">
 
-https://cloud.google.com/storage/docs/authentication
+An instagram mock with React and Node.js deployed on Google Cloud Platform. This is a student project I did at Code Chrysalis, a Tokyo-based bootcamp.
 
-https://developers.google.com/oauthplayground/
+Deployed app can be accessed here:
+https://test-proj-181403.an.r.appspot.com/ 
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Technical Stack Used
+<img width="795" alt="Screen Shot 2021-05-11 at 00 02 04" src="https://user-images.githubusercontent.com/34878933/117680450-25d44a80-b1ec-11eb-8901-61d7e9f60794.png">
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Front-end
+  * React.js
+* Back-end (API Server)
+  * Node.js
+  * Express.js
+  * Deployed: Google Cloud App Engine
+* Back-end (Database)
+  * PostgreSQL
+  * Deployed: Google Cloud Cloud SQL
+* Back-end (Photo Storage)
+  * Google Cloud Storage
+  
+## Features and Functionalities Implemented
 
-### Code Splitting
+* User should be able to upload desired photos
+  * from local files
+  * from mobile camera 
+* User should be able to leave comments on photos
+* User should be able to browse through photos and comments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Sample User Interfaces
+<img width="300" alt="scr1" src="https://user-images.githubusercontent.com/34878933/117681599-3c2ed600-b1ed-11eb-9b77-609e96de806f.PNG">
+<img width="300" alt="scr2" src="https://user-images.githubusercontent.com/34878933/117681745-5cf72b80-b1ed-11eb-8dd5-5a8dcfd01071.PNG">
 
-### Analyzing the Bundle Size
+  
+  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
